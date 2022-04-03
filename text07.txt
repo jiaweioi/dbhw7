@@ -1,0 +1,40 @@
+jz4721
+
+Please replace the NetID above with your own NetID
+
+Please replace [] parts with your own answer.
+
+
+ANSWER4:
+- Error messages (if any): Y
+    - Message: 
+        DELETE FROM STUDENT WHERE NNumber = '7'
+        *
+        ERROR at line 1:
+        ORA-02292: integrity constraint (JZ4721.DOG_FK) violated - child record found
+    - Explain: Violate the integrity constraint, this student(NNumber='7') has three dogs referencing him
+
+ANSWER5:
+- Tables changed (if any): STUDENT,DOG
+    - Explain: Update STUDENT,DELETE from DOG
+- Error messages (if any): N
+
+ANSWER6:
+- Tables changed (if any): DOG
+    - Explain: UPDATE DOG
+- Error messages (if any): N
+
+
+ANSWER7:
+- Tables changed (if any): STUDENT
+    - Explain: INSERT INTO  STUDENT
+- Error messages (if any): N
+
+ANSWER8:
+- Error messages (if any): Y
+    - Message: 
+        INSERT INTO  STUDENT (NNumber,Deposit,NetID)
+        *
+        ERROR at line 1:
+        ORA-00001: unique constraint (JZ4721.STUDENT_NET_ID_UNIQUE) violated
+    - Explain: Violate the constraint that NetID has to be unique
