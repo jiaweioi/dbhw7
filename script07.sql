@@ -44,7 +44,7 @@ WHERE (S.Deposit / D.Price) > 2.0 AND S.NNumber = D.NNumber
 UNION
 SELECT DISTINCT S.NNumber AS NNumber,D.SerialNumber AS SerialNumber,S.Deposit/ D.Price AS DepositPriceRatio
 FROM STUDENT S,DOG D
-WHERE S.NetID IS NULL
+WHERE S.NetID IS NULL AND S.NNumber = D.NNumber
 ORDER BY NNumber ASC,SerialNumber ASC,DepositPriceRatio ASC;
 
 
@@ -61,7 +61,7 @@ HAVING Count > 3
 CREATE TABLE ANSWER2
 AS SELECT DISTINCT NNumber
 FROM STUDENT
-WHERE Deposit >= 100;
+WHERE Deposit >= 100
 UNION 
 SELECT NNumber
 FROM TEMP1
@@ -72,7 +72,7 @@ SELECT * FROM ANSWER2;
 
 -- ANSWER3
 CREATE TABLE ANSWER3
-AS SELECT DISTINCT NNumber
+AS SELECT DISTINCT D1.NNumber
 FROM DOG D1,DOG D2,DOG D3
 WHERE D1.NNumber = D2.NNumber AND D2.NNumber = D3.NNumber
 AND D1.Breed = 'Beagle' AND D2.Breed = 'Bulldog' AND D3.Breed = 'Poodle'
