@@ -40,11 +40,7 @@ SELECT * FROM ANSWER0;
 CREATE TABLE ANSWER1
 AS SELECT DISTINCT S.NNumber AS NNumber,D.SerialNumber AS SerialNumber,S.Deposit/ D.Price AS DepositPriceRatio
 FROM STUDENT S,DOG D
-WHERE (S.Deposit / D.Price) > 2.0 AND S.NNumber = D.NNumber
-UNION
-SELECT DISTINCT S.NNumber AS NNumber,D.SerialNumber AS SerialNumber,S.Deposit/ D.Price AS DepositPriceRatio
-FROM STUDENT S,DOG D
-WHERE S.NetID IS NULL AND S.NNumber = D.NNumber
+WHERE (S.Deposit / D.Price) > 2.0 AND S.NNumber = D.NNumber AND S.NetID IS NULL
 ORDER BY NNumber ASC,SerialNumber ASC,DepositPriceRatio ASC;
 
 
