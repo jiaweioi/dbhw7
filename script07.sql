@@ -66,8 +66,8 @@ SELECT * FROM ANSWER2;
 CREATE TABLE ANSWER3
 AS SELECT DISTINCT D1.NNumber
 FROM DOG D1,DOG D2,DOG D3
-WHERE D1.NNumber != '2' AND D1.NNumber = D2.NNumber AND D2.NNumber = D3.NNumber
-AND D1.NNumber = 'Beagle' AND D2.Breed = 'Bulldog' AND D3.Breed = 'Poodle'
+WHERE D1.NNumber = '2' AND D1.NNumber = D2.NNumber AND D2.NNumber = D3.NNumber
+AND D1.Breed = 'Beagle' AND D2.Breed = 'Bulldog' AND D3.Breed = 'Poodle'
 ORDER BY NNumber ASC;
 
 PROMPT ANSWER3
@@ -84,8 +84,8 @@ PROMPT ANSWER4
 SELECT * FROM ANSWER4;
 
 -- ANSWER5
-DELETE FROM DOG WHERE SerialNumber = '2005';
 UPDATE STUDENT SET Deposit=Deposit-5 WHERE NNumber = '6';
+DELETE FROM DOG WHERE SerialNumber = '2005';
 
 PROMPT ANSWER5
 SELECT * FROM STUDENT;
