@@ -66,7 +66,7 @@ SELECT * FROM ANSWER2;
 CREATE TABLE ANSWER3
 AS SELECT DISTINCT D1.NNumber
 FROM DOG D1,DOG D2,DOG D3
-WHERE D1.NNumber = '2' AND D1.NNumber = D2.NNumber AND D2.NNumber = D3.NNumber
+WHERE D1.NNumber <> '2' AND D1.NNumber = D2.NNumber AND D2.NNumber = D3.NNumber
 AND D1.Breed = 'Beagle' AND D2.Breed = 'Bulldog' AND D3.Breed = 'Poodle'
 ORDER BY NNumber ASC;
 
